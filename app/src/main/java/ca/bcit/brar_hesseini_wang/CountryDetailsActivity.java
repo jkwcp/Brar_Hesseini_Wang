@@ -37,6 +37,7 @@ public class CountryDetailsActivity extends AppCompatActivity {
         final TextView populationView = findViewById(R.id.population);
         final TextView areaView = findViewById(R.id.area);
         final TextView bordersView = findViewById(R.id.borders);
+        final ImageView flagView = findViewById(R.id.flag);
 
         new AsyncTask(){
             @Override
@@ -87,12 +88,12 @@ public class CountryDetailsActivity extends AppCompatActivity {
                 if (pDialog.isShowing())
                     pDialog.dismiss();
 
-                nameView.setText(tempCountry.get_name());
-                capitalView.setText(tempCountry.get_capital());
-                regionView.setText(tempCountry.get_region());
-                populationView.setText(tempCountry.get_population());
-                areaView.setText(tempCountry.get_area());
-                bordersView.setText(tempCountry.get_borders());
+                nameView.setText("Name: " + tempCountry.get_name());
+                capitalView.setText("Capital: " + tempCountry.get_capital());
+                regionView.setText("Region: " + tempCountry.get_region());
+                populationView.setText("Population: " + tempCountry.get_population());
+                areaView.setText("Area: " + tempCountry.get_area());
+                bordersView.setText("Borders: " + tempCountry.get_borders());
 
 
             }

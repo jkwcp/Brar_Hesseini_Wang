@@ -12,4 +12,10 @@
     </string-array>
     <string name="title_activity_country_details">CountryDetailsActivity</string>
     <string name="title_activity_main">MainActivity</string>
+    <string name="namePre">Name:\u0020 </string>
+    <string name="capitalPre">Capital:\u0020</string>
+    <string name="regionPre">Region:\u0020</string>
+    <string name="populationPre">Population:\u0020</string>
+    <string name="bordersPre">Borders:\u0020</string>
+    <string name="areaPre">Area:\u0020</string>
 </resources>
