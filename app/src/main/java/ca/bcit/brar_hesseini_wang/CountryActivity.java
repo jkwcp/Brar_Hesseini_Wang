@@ -25,6 +25,7 @@ public class CountryActivity extends ListActivity {
 
     private String SERVICE_URL = "https://restcountries.eu/rest/v2/region/";
     private ProgressDialog pDialog;
+    private ArrayList<String> codes = new ArrayList<String>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +34,7 @@ public class CountryActivity extends ListActivity {
         String continent = (String) getIntent().getExtras().get("continent");
         final String reqUrl = SERVICE_URL + continent;
         final ListView listCountries = getListView();
+
 
         new AsyncTask(){
             @Override
@@ -60,6 +62,7 @@ public class CountryActivity extends ListActivity {
                         for (int i = 0; i < jsonList.length(); i++){
                             JSONObject c = jsonList.getJSONObject(i);
                             list[i] = c.getString("name");
+                            codes.add(c.getString("alpha3Code"));
                         }
                         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(CountryActivity.this, android.R.layout.simple_expandable_list_item_1, list);
                         return arrayAdapter;
@@ -83,7 +86,7 @@ public class CountryActivity extends ListActivity {
 
     @Override
     protected void onListItemClick(ListView l, View v, int position, long id) {
-        String selectedCountry = l.getItemAtPosition(position).toString();
+        String selectedCountry = codes.get(position);
         Intent intent = new Intent(this, CountryDetailsActivity.class);
         intent.putExtra("country", (String)selectedCountry);
         startActivity(intent);

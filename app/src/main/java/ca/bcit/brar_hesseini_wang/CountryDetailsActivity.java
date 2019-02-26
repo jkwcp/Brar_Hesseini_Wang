@@ -27,7 +27,7 @@ public class CountryDetailsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_country_details);
 
         String countryName = (String) getIntent().getExtras().get("country");
-        final String reqUrl = "https://restcountries.eu/rest/v2/name/" + countryName;
+        final String reqUrl = "https://restcountries.eu/rest/v2/alpha/" + countryName;
 
 
 
@@ -56,7 +56,7 @@ public class CountryDetailsActivity extends AppCompatActivity {
             protected Object doInBackground(Object[] objects){
                 HttpHandler sh = new HttpHandler();
 
-                String jsonStr = sh.makeServiceCall(reqUrl);
+                String jsonStr = "[" + sh.makeServiceCall(reqUrl) + "]";
 
                 if (jsonStr != null) {
                     try {
@@ -64,7 +64,7 @@ public class CountryDetailsActivity extends AppCompatActivity {
 
                         JSONObject c = jsonList.getJSONObject(0);
 
-                        String temp = c.getString("name");
+                        String temp = jsonStr;
                         tempCountry.set_area(c.getString("area"));
                         tempCountry.set_name(c.getString("name"));
                         tempCountry.set_borders(c.getString("borders"));
