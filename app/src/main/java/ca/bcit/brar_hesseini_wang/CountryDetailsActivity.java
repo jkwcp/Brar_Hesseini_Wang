@@ -71,7 +71,7 @@ public class CountryDetailsActivity extends AppCompatActivity {
                         tempCountry.set_capital(c.getString("capital"));
                         tempCountry.set_flag(c.getString("flag"));
                         tempCountry.set_region(c.getString("region"));
-                        tempCountry.set_population(c.getString("populaion"));
+                        tempCountry.set_population(c.getString("population"));
 
 
                         return temp;
