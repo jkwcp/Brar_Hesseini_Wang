@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Brar_Hesseini_Wang</string>
+    <string name="title_activity_country">CountryActivity</string>
+    <string name="title_activity_country_details_acitivity">CountryDetailsAcitivity</string>
+    <string-array name="continents">
+        <item>Africa</item>
+        <item>Asia</item>
+        <item>Oceania</item>
+        <item>Europe</item>
+        <item>Americas</item>
+        <item>Oceania</item>
+    </string-array>
+    <string name="title_activity_country_details">CountryDetailsActivity</string>
+    <string name="title_activity_main">MainActivity</string>
+</resources>
